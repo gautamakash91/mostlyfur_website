@@ -16,10 +16,17 @@ export const siteConfig = {
   country: "IN",
   postalCode: "403517",
   mapsUrl: "https://maps.app.goo.gl/5CTDE1qoVk7Wk4ww5",
+  // Exact pin coordinates, from the same Google Business Profile as mapsUrl.
+  latitude: 15.6263585,
+  longitude: 73.7623725,
   // From the business's own Google Business Profile — update if it changes materially.
   googleRating: 5.0,
   googleReviewCount: 99,
 } as const;
+
+export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+  `${siteConfig.name}, ${siteConfig.locality}, ${siteConfig.region}`
+)}&ll=${siteConfig.latitude},${siteConfig.longitude}&z=16&output=embed`;
 
 export const nav: Array<[string, string]> = [
   ["Services", "#services"],

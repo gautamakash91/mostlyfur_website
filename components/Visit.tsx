@@ -1,7 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { Photo } from "./ui/Photo";
 import { Eyebrow } from "./ui/Eyebrow";
-import { siteConfig, waLink } from "@/lib/site-config";
+import { siteConfig, mapEmbedUrl, waLink } from "@/lib/site-config";
 
 export function Visit() {
   return (
@@ -33,10 +32,16 @@ export function Visit() {
             </span>
           </p>
           <p className="flex items-center gap-3 text-palm">
-            <Phone size={20} className="text-clay" /> {siteConfig.phoneDisplay}
+            <Phone size={20} className="text-clay" />{" "}
+            <a href={`tel:${siteConfig.phoneE164}`} className="nav-link">
+              {siteConfig.phoneDisplay}
+            </a>
           </p>
           <p className="flex items-center gap-3 text-palm">
-            <Mail size={20} className="text-clay" /> {siteConfig.email}
+            <Mail size={20} className="text-clay" />{" "}
+            <a href={`mailto:${siteConfig.email}`} className="nav-link">
+              {siteConfig.email}
+            </a>
           </p>
         </div>
         <div className="flex flex-wrap gap-3 mt-8">
@@ -54,7 +59,22 @@ export function Visit() {
         </div>
       </div>
       <div className="reveal">
-        <Photo label="Map / storefront — embed Google Map here" ratio="4 / 3" />
+        <div
+          style={{
+            aspectRatio: "4 / 3",
+            borderRadius: 18,
+            overflow: "hidden",
+            border: "1px solid rgba(194,161,77,.28)",
+          }}
+        >
+          <iframe
+            src={mapEmbedUrl}
+            title={`${siteConfig.name} location on Google Maps`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            style={{ width: "100%", height: "100%", border: 0 }}
+          />
+        </div>
       </div>
     </section>
   );

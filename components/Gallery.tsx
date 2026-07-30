@@ -1,15 +1,25 @@
-import { Photo } from "./ui/Photo";
+import Image from "next/image";
 import { Seal } from "./ui/Seal";
+import pompomPuppy from "@/public/photos/gallery/gallery-puppy-pompom.jpg";
+import catGroomTable from "@/public/photos/gallery/gallery-cat-groomtable.jpg";
+import dogPhotowall from "@/public/photos/gallery/gallery-dog-photowall.jpg";
+import pitbullCouch from "@/public/photos/gallery/gallery-pitbull-couch.jpg";
+import catCouchPet from "@/public/photos/gallery/gallery-cat-couch-pet.jpg";
+import catTree from "@/public/photos/gallery/gallery-cat-tree.jpg";
+import poodleCouch from "@/public/photos/gallery/gallery-poodle-couch.jpg";
+import shopCorridor from "@/public/photos/gallery/gallery-shop-corridor.jpg";
+import treatWall from "@/public/photos/gallery/gallery-treat-wall.jpg";
 
 const shots = [
-  "Before & after",
-  "Spa day",
-  "Happy regular",
-  "The boutique",
-  "Boarding lounge",
-  "Behind the scenes",
-  "Tiny crown energy",
-  "Fresh & fluffy",
+  { label: "Tiny crown energy", photo: pompomPuppy },
+  { label: "Spa day", photo: catGroomTable },
+  { label: "Paws for a photo", photo: dogPhotowall },
+  { label: "Happy regular", photo: pitbullCouch },
+  { label: "Behind the scenes", photo: catCouchPet },
+  { label: "Boarding lounge", photo: catTree },
+  { label: "Fresh & fluffy", photo: poodleCouch },
+  { label: "The boutique", photo: shopCorridor },
+  { label: "The treat wall", photo: treatWall },
 ];
 
 export function Gallery() {
@@ -22,9 +32,26 @@ export function Gallery() {
         </h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-        {shots.map((t, i) => (
-          <div key={t} className="reveal" style={{ gridRow: i % 5 === 0 ? "span 2" : "auto" }}>
-            <Photo label={t} ratio={i % 5 === 0 ? "3 / 4" : "1 / 1"} />
+        {shots.map(({ label, photo }, i) => (
+          <div key={label} className="reveal" style={{ gridRow: i % 5 === 0 ? "span 2" : "auto" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: i % 5 === 0 ? "3 / 4" : "1 / 1",
+                borderRadius: 18,
+                overflow: "hidden",
+                border: "1px solid rgba(194,161,77,.28)",
+              }}
+            >
+              <Image
+                src={photo}
+                alt={label}
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
           </div>
         ))}
       </div>

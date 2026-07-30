@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Crest } from "./ui/Crest";
-import { Photo } from "./ui/Photo";
 import { Eyebrow } from "./ui/Eyebrow";
 import { waLink } from "@/lib/site-config";
+import heroPhoto from "@/public/photos/hero.jpg";
 
 const warrants = [
   "Certified stress-free groomers",
@@ -39,7 +40,25 @@ export function Hero() {
           </div>
         </div>
         <div className="reveal in">
-          <Photo label="Hero photo — your spa / happy pet" tall />
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "3 / 4",
+              borderRadius: 18,
+              overflow: "hidden",
+              border: "1px solid rgba(194,161,77,.28)",
+            }}
+          >
+            <Image
+              src={heroPhoto}
+              alt="A dog at Mostlyfur's grooming bath in Siolim, Goa"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
       </div>
       <div style={{ borderTop: "1px solid rgba(194,161,77,.22)" }}>

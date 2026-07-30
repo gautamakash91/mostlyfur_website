@@ -1,21 +1,27 @@
-import { Photo } from "./ui/Photo";
+import Image from "next/image";
 import { Eyebrow } from "./ui/Eyebrow";
+import kasturiPhoto from "@/public/team/kasturi.png";
+import akashPhoto from "@/public/team/akash.png";
+import kankyPhoto from "@/public/team/kanky.png";
 
 const team = [
   {
     n: "Kasturi Borkotoky",
     r: "Founder · Lead Groomer",
     b: "Traded boardrooms for grooming rooms. A decade of retail polish, the heart of a proud cat mom.",
+    photo: kasturiPhoto,
   },
   {
     n: "Akash Gautam",
     r: "Co-founder · Groomer",
     b: "Tech geek, certified groomer and devoted cat dad. Precise cuts, endless cuddles.",
+    photo: akashPhoto,
   },
   {
     n: "Kanky Borkotoky",
     r: "Groomer · Educator",
     b: "Certified groomer and full-time animal enthusiast — more four-legged friends than two.",
+    photo: kankyPhoto,
   },
 ];
 
@@ -36,7 +42,15 @@ export function Team() {
         <div className="grid md:grid-cols-3 gap-6 mt-14">
           {team.map((m) => (
             <div key={m.n} className="card overflow-hidden reveal">
-              <Photo label={`Portrait — ${m.n.split(" ")[0]}`} ratio="4 / 5" />
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 5" }}>
+                <Image
+                  src={m.photo}
+                  alt={m.n}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <div className="p-6">
                 <h3 className="serif text-palm" style={{ fontSize: "1.35rem" }}>
                   {m.n}

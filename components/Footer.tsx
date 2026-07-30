@@ -35,8 +35,16 @@ export function Footer() {
         <div>
           <p className="eyebrow text-gold">Contact</p>
           <ul className="mt-4 flex flex-col gap-2.5 text-paper" style={{ opacity: 0.82, fontSize: ".92rem" }}>
-            <li>{siteConfig.phoneDisplay}</li>
-            <li>{siteConfig.email}</li>
+            <li>
+              <a href={`tel:${siteConfig.phoneE164}`} className="nav-link" style={{ color: "inherit" }}>
+                {siteConfig.phoneDisplay}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${siteConfig.email}`} className="nav-link" style={{ color: "inherit" }}>
+                {siteConfig.email}
+              </a>
+            </li>
             <li>
               {siteConfig.locality}, North {siteConfig.region}
             </li>

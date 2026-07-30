@@ -1,6 +1,7 @@
-import { Photo } from "./ui/Photo";
+import Image from "next/image";
 import { Eyebrow } from "./ui/Eyebrow";
 import { waLink } from "@/lib/site-config";
+import boardingPhoto from "@/public/photos/boarding.jpg";
 
 const features: Array<[string, string]> = [
   ["Quiet suites", "Low-stress, cat-first spaces"],
@@ -58,7 +59,24 @@ export function Boarding() {
         </div>
       </div>
       <div className="reveal">
-        <Photo label="Boarding photo — your cat suite / lounge" tall />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "4 / 3",
+            borderRadius: 18,
+            overflow: "hidden",
+            border: "1px solid rgba(194,161,77,.28)",
+          }}
+        >
+          <Image
+            src={boardingPhoto}
+            alt="Cat boarding suites at Mostlyfur, with climbing shelves and window views"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       </div>
     </section>
   );

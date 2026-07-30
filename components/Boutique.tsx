@@ -1,7 +1,14 @@
-import { Photo } from "./ui/Photo";
+import Image from "next/image";
 import { Eyebrow } from "./ui/Eyebrow";
+import treatsPhoto from "@/public/photos/boutique-treats.jpg";
+import toysPhoto from "@/public/photos/boutique-toys.jpg";
+import leashPhoto from "@/public/photos/boutique-leash.jpg";
 
-const categories = ["Gourmet treats", "Toys & enrichment", "Coats & accessories", "Gift bundles"];
+const categories = [
+  { label: "Gourmet treats", photo: treatsPhoto },
+  { label: "Toys & enrichment", photo: toysPhoto },
+  { label: "Coats & accessories", photo: leashPhoto },
+];
 
 export function Boutique() {
   return (
@@ -20,15 +27,32 @@ export function Boutique() {
             has everything.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-          {categories.map((t) => (
-            <div key={t} className="reveal">
-              <Photo label={t} ratio="1 / 1" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+          {categories.map(({ label, photo }) => (
+            <div key={label} className="reveal">
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "1 / 1",
+                  borderRadius: 18,
+                  overflow: "hidden",
+                  border: "1px solid rgba(194,161,77,.28)",
+                }}
+              >
+                <Image
+                  src={photo}
+                  alt={label}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <p
                 className="marc text-palm mt-3 text-center"
                 style={{ letterSpacing: ".08em", fontSize: ".95rem" }}
               >
-                {t}
+                {label}
               </p>
             </div>
           ))}
