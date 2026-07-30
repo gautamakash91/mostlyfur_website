@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
+/* ---------- Brand palette (single source of truth) ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f4ede0;
+  --ivory: #fbf6ec;
+  --palm: #16352a;
+  --palm-2: #1f4a3a;
+  --gold: #c2a14d;
+  --gold-soft: #dfc588;
+  --clay: #c57a53;
+  --ink: #241f1b;
+  --ink-soft: #6a5f53;
 }
 
+/* ---------- Map brand tokens into Tailwind's theme ---------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-ivory: var(--ivory);
+  --color-palm: var(--palm);
+  --color-palm-2: var(--palm-2);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-clay: var(--clay);
+  --color-ink: var(--ink);
+  --color-soft: var(--ink-soft);
+
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-bodoni);
+  --font-marcellus: var(--font-marcellus-nf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * Everything below lives in @layer base / @layer components so Tailwind's
+ * utility layer (e.g. `hidden`, `md:flex`) always wins the cascade against
+ * these custom classes, same as it would against Tailwind's own components.
+ * Unlayered CSS beats every @layer, so leaving these unlayered would let
+ * e.g. `.btn { display: inline-flex }` silently defeat a `hidden` utility.
+ */
+@layer base {
+  html {
+    background: var(--paper);
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* ---------- Typography ---------- */
+  .display {
+    font-family: var(--font-display), Georgia, serif;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+  .display i {
+    font-style: italic;
+  }
+  .serif {
+    font-family: var(--font-display), Georgia, serif;
+  }
+  .marc {
+    font-family: var(--font-marcellus), serif;
+  }
+  .eyebrow {
+    font-family: var(--font-marcellus), serif;
+    text-transform: uppercase;
+    letter-spacing: 0.34em;
+    font-size: 0.72rem;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s;
+    cursor: pointer;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--palm);
+    box-shadow: 0 6px 22px rgba(194, 161, 77, 0.32);
+  }
+  .btn-gold:hover {
+    background: var(--gold-soft);
+  }
+  .btn-ghost {
+    border: 1px solid var(--gold);
+    color: var(--palm);
+  }
+  .btn-ghost.on-dark {
+    color: var(--paper);
+  }
+  .btn-ghost:hover {
+    background: rgba(194, 161, 77, 0.12);
+  }
+
+  /* ---------- Gold seal divider ---------- */
+  .seal-line {
+    height: 1px;
+    width: 64px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .seal-line:last-child {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  /* ---------- Photo placeholder ---------- */
+  .photo {
+    width: 100%;
+    border-radius: 18px;
+    background:
+      radial-gradient(120% 90% at 30% 10%, rgba(194, 161, 77, 0.18), transparent 60%),
+      linear-gradient(160deg, var(--palm-2), var(--palm));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    border: 1px solid rgba(194, 161, 77, 0.28);
+  }
+  .photo-label {
+    font-family: var(--font-marcellus), serif;
+    color: var(--gold-soft);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--ivory);
+    border: 1px solid rgba(36, 31, 27, 0.07);
+    border-radius: 18px;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(22, 53, 42, 0.1);
+  }
+
+  /* ---------- Pills ---------- */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(194, 161, 77, 0.5);
+    color: var(--palm);
+    font-size: 0.8rem;
+  }
+  .pill.on-dark {
+    color: var(--paper);
+    border-color: rgba(194, 161, 77, 0.45);
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---------- Nav underline ---------- */
+  .nav-link {
+    position: relative;
+    font-size: 0.92rem;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .nav-link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 0;
+    background: var(--gold);
+    transition: width 0.25s;
+  }
+  .nav-link:hover {
+    color: var(--palm);
+  }
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  .faq-item {
+    border-top: 1px solid rgba(36, 31, 27, 0.12);
+  }
+  .faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    text-align: left;
+    cursor: pointer;
+  }
+  .faq-a {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+  .faq-a.open {
+    max-height: 240px;
+  }
+  .chev {
+    transition: transform 0.3s;
+    flex: none;
+  }
+  .chev.open {
+    transform: rotate(180deg);
+  }
 }
