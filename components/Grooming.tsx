@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Crest } from "./ui/Crest";
-import { Photo } from "./ui/Photo";
 import { Eyebrow } from "./ui/Eyebrow";
 import { waLink } from "@/lib/site-config";
+import signaturePhoto from "@/public/photos/signature-grooming.jpg";
 
 const points = [
   "Calm, unhurried handling",
@@ -16,7 +17,24 @@ export function Grooming() {
     <section id="grooming" className="bg-ivory">
       <div className="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
         <div className="reveal order-2 md:order-1">
-          <Photo label="Grooming photo — your groomer at work" />
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "4 / 5",
+              borderRadius: 18,
+              overflow: "hidden",
+              border: "1px solid rgba(194,161,77,.28)",
+            }}
+          >
+            <Image
+              src={signaturePhoto}
+              alt="A groomer brushing a fluffy white dog at Mostlyfur's Siolim salon"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
         <div className="reveal order-1 md:order-2">
           <Eyebrow>Signature grooming · Siolim</Eyebrow>
