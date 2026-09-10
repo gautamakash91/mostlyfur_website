@@ -46,6 +46,10 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans), system-ui, sans-serif;
+    /* Base size for body copy. Headings set their own size in rem (relative to
+       the html root), so bumping this leaves the display type untouched. */
+    font-size: 1.05rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -95,7 +99,7 @@
     padding: 0.85rem 1.5rem;
     border-radius: 999px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease,
@@ -151,7 +155,7 @@
   .photo-label {
     font-family: var(--font-marcellus), serif;
     color: var(--gold-soft);
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0 1rem;
@@ -181,7 +185,7 @@
     border-radius: 999px;
     border: 1px solid rgba(194, 161, 77, 0.5);
     color: var(--palm);
-    font-size: 0.8rem;
+    font-size: 0.88rem;
   }
   .pill.on-dark {
     color: var(--paper);
@@ -204,7 +208,7 @@
   /* ---------- Nav underline ---------- */
   .nav-link {
     position: relative;
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: var(--ink);
     transition: color 0.2s;
   }
@@ -245,7 +249,7 @@
     transition: max-height 0.35s ease;
   }
   .faq-a.open {
-    max-height: 240px;
+    max-height: 320px;
   }
   .chev {
     transition: transform 0.3s;

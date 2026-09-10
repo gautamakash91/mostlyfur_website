@@ -53,7 +53,7 @@ export function WhySalon() {
               <h3 className="serif text-paper mt-4" style={{ fontSize: "1.25rem" }}>
                 {t}
               </h3>
-              <p className="text-paper mt-2" style={{ opacity: 0.78, fontSize: ".92rem", lineHeight: 1.6 }}>
+              <p className="text-paper mt-2" style={{ opacity: 0.78, fontSize: "1rem", lineHeight: 1.6 }}>
                 {d}
               </p>
             </div>

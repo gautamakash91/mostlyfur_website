@@ -22,7 +22,22 @@ export const siteConfig = {
   // From the business's own Google Business Profile — update if it changes materially.
   googleRating: 5.0,
   googleReviewCount: 99,
+  // Open Wed–Mon, 10am–7pm. Closed Tuesdays.
+  hoursDisplay: "10am – 7pm",
+  closedDayDisplay: "Closed Tuesdays",
 } as const;
+
+// schema.org day names for the days we're open (everything except Tuesday).
+export const openDays = [
+  "Monday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+] as const;
+export const opensAt = "10:00";
+export const closesAt = "19:00";
 
 export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
   `${siteConfig.name}, ${siteConfig.locality}, ${siteConfig.region}`

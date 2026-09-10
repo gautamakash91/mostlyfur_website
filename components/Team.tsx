@@ -7,19 +7,19 @@ import kankyPhoto from "@/public/team/kanky.png";
 const team = [
   {
     n: "Kasturi Borkotoky",
-    r: "Founder · Lead Groomer",
+    r: "Founder",
     b: "Traded boardrooms for grooming rooms. A decade of retail polish, the heart of a proud cat mom.",
     photo: kasturiPhoto,
   },
   {
     n: "Akash Gautam",
-    r: "Co-founder · Groomer",
+    r: "Founder",
     b: "Tech geek, certified groomer and devoted cat dad. Precise cuts, endless cuddles.",
     photo: akashPhoto,
   },
   {
     n: "Kanky Borkotoky",
-    r: "Groomer · Educator",
+    r: "Head Groomer",
     b: "Certified groomer and full-time animal enthusiast — more four-legged friends than two.",
     photo: kankyPhoto,
   },
@@ -58,7 +58,7 @@ export function Team() {
                 <p className="eyebrow text-clay mt-1" style={{ letterSpacing: ".18em" }}>
                   {m.r}
                 </p>
-                <p className="text-soft mt-3" style={{ fontSize: ".92rem", lineHeight: 1.6 }}>
+                <p className="text-soft mt-3" style={{ fontSize: "1rem", lineHeight: 1.6 }}>
                   {m.b}
                 </p>
               </div>

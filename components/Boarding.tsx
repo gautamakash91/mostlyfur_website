@@ -32,7 +32,7 @@ export function Boarding() {
               <p className="serif text-palm" style={{ fontSize: "1.1rem" }}>
                 {t}
               </p>
-              <p className="text-soft mt-1" style={{ fontSize: ".9rem" }}>
+              <p className="text-soft mt-1" style={{ fontSize: ".98rem" }}>
                 {d}
               </p>
             </div>
@@ -52,7 +52,7 @@ export function Boarding() {
             target="_blank"
             rel="noreferrer"
             className="text-clay"
-            style={{ fontSize: ".92rem", textDecoration: "underline", textUnderlineOffset: "3px" }}
+            style={{ fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "3px" }}
           >
             Dog boarding coming soon — join the waitlist
           </a>

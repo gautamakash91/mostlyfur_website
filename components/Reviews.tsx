@@ -25,7 +25,7 @@ export function Reviews() {
         <h2 className="display text-palm mt-4" style={{ fontSize: "clamp(2rem,4.5vw,3rem)" }}>
           Loved by Goa&apos;s pet parents
         </h2>
-        <p className="text-soft mt-3" style={{ fontSize: ".92rem" }}>
+        <p className="text-soft mt-3" style={{ fontSize: "1rem" }}>
           5.0 stars from {siteConfig.googleReviewCount}+ reviews on Google
         </p>
       </div>
@@ -36,7 +36,7 @@ export function Reviews() {
             <p className="serif text-palm mt-4" style={{ fontSize: "1.2rem", lineHeight: 1.45 }}>
               &quot;{r.q}&quot;
             </p>
-            <p className="text-soft mt-4" style={{ fontSize: ".82rem" }}>
+            <p className="text-soft mt-4" style={{ fontSize: ".9rem" }}>
               {r.a}
             </p>
           </div>
@@ -48,7 +48,7 @@ export function Reviews() {
           target="_blank"
           rel="noreferrer"
           className="text-clay"
-          style={{ fontSize: ".92rem", textDecoration: "underline", textUnderlineOffset: "3px" }}
+          style={{ fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "3px" }}
         >
           See all our reviews on Google
         </a>

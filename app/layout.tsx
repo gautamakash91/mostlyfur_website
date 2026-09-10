@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Marcellus, Hanken_Grotesk } from "next/font/google";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, openDays, opensAt, closesAt } from "@/lib/site-config";
 import "./globals.css";
 
 const bodoniModa = Bodoni_Moda({
@@ -82,6 +82,14 @@ const localBusinessJsonLd = {
   telephone: siteConfig.phoneE164,
   email: siteConfig.email,
   priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [...openDays],
+      opens: opensAt,
+      closes: closesAt,
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.streetAddress,

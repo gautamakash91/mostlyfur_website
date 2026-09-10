@@ -14,7 +14,7 @@ export function Footer() {
           </div>
           <p
             className="text-paper mt-4"
-            style={{ opacity: 0.72, fontSize: ".9rem", lineHeight: 1.6, maxWidth: "20rem" }}
+            style={{ opacity: 0.72, fontSize: ".98rem", lineHeight: 1.6, maxWidth: "20rem" }}
           >
             Pampering pets like they&apos;re royalty — luxurious spa, serene cat boarding and a curated
             boutique in Goa.
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
         <div>
           <p className="eyebrow text-gold">Contact</p>
-          <ul className="mt-4 flex flex-col gap-2.5 text-paper" style={{ opacity: 0.82, fontSize: ".92rem" }}>
+          <ul className="mt-4 flex flex-col gap-2.5 text-paper" style={{ opacity: 0.82, fontSize: "1rem" }}>
             <li>
               <a href={`tel:${siteConfig.phoneE164}`} className="nav-link" style={{ color: "inherit" }}>
                 {siteConfig.phoneDisplay}
@@ -54,7 +54,7 @@ export function Footer() {
       <div style={{ borderTop: "1px solid rgba(194,161,77,.14)" }}>
         <div
           className="max-w-6xl mx-auto px-5 py-5 flex flex-wrap gap-3 justify-between text-paper"
-          style={{ opacity: 0.6, fontSize: ".82rem" }}
+          style={{ opacity: 0.6, fontSize: ".9rem" }}
         >
           <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
           <span className="flex gap-5">

@@ -28,7 +28,8 @@ export function Visit() {
           <p className="flex items-center gap-3 text-palm">
             <Clock size={20} className="text-clay" />{" "}
             <span>
-              Open daily <span className="text-soft">· confirm hours</span>
+              {siteConfig.hoursDisplay}{" "}
+              <span className="text-soft">· {siteConfig.closedDayDisplay}</span>
             </span>
           </p>
           <p className="flex items-center gap-3 text-palm">

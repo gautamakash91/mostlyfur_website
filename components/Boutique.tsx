@@ -50,7 +50,7 @@ export function Boutique() {
               </div>
               <p
                 className="marc text-palm mt-3 text-center"
-                style={{ letterSpacing: ".08em", fontSize: ".95rem" }}
+                style={{ letterSpacing: ".08em", fontSize: "1.02rem" }}
               >
                 {label}
               </p>
