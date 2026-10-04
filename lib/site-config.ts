@@ -61,3 +61,6 @@ export function waLink(message: string) {
 // Bump this whenever either page changes materially.
 export const legalLastUpdated = "2026-10-04";
 export const legalLastUpdatedDisplay = "4 October 2026";
+
+// GA4 web stream for https://www.mostlyfur.com (Admin → Data streams).
+export const gaMeasurementId = "G-ZGYVXSS7YW";

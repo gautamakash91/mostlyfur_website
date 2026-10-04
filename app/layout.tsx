@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Marcellus, Hanken_Grotesk } from "next/font/google";
 import { siteConfig, openDays, opensAt, closesAt } from "@/lib/site-config";
+import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 const bodoniModa = Bodoni_Moda({
@@ -128,6 +129,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         {children}
+        {/* Production builds only, so local dev visits don't land in GA4. */}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );

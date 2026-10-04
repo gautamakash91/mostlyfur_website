@@ -78,9 +78,18 @@ const sections: LegalSection[] = [
         <h3>On this website</h3>
         <ul>
           <li>
-            Our website does not use its own tracking or advertising cookies, and has no sign-up or
-            contact forms. Our hosting provider automatically records standard technical data (such as
-            IP address, browser type and pages visited) to keep the site secure and running.
+            We use Google Analytics to understand how people find and use our website — for example
+            which pages are viewed, which ad or website brought you here, and whether you tapped our
+            WhatsApp or call buttons — along with your device, browser and approximate location. Google
+            Analytics uses cookies and similar technology to do this. If you reach us through one of
+            our Google ads, Google may also record that visit to measure how the ad performed. This
+            data is processed by Google under its own privacy policy, and you can block it with your
+            browser&apos;s cookie settings or Google&apos;s Analytics opt-out browser add-on.
+          </li>
+          <li>
+            Our website has no sign-up or contact forms. Our hosting provider automatically records
+            standard technical data (such as IP address, browser type and pages visited) to keep the
+            site secure and running.
           </li>
           <li>
             The embedded Google Map and links to WhatsApp are provided by Google and Meta, who may set
@@ -107,6 +116,7 @@ const sections: LegalSection[] = [
           asked us not to.
         </li>
         <li>To take payments, keep accounts and meet our tax and legal obligations.</li>
+        <li>To understand how our website and ads are used, so we can improve them.</li>
         <li>To keep our premises, pets, customers and staff safe and secure.</li>
         <li>To handle complaints and disputes and protect our legal rights.</li>
       </ul>
