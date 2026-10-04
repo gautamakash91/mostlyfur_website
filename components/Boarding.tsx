@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Eyebrow } from "./ui/Eyebrow";
+import { FindUs } from "./ui/FindUs";
 import { waLink } from "@/lib/site-config";
 import boardingPhoto from "@/public/photos/boarding.jpg";
 
@@ -57,6 +58,7 @@ export function Boarding() {
             Dog boarding coming soon — join the waitlist
           </a>
         </div>
+        <FindUs />
       </div>
       <div className="reveal">
         <div

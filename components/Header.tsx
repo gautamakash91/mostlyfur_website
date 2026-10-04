@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./ui/Logo";
 import { nav, waLink } from "@/lib/site-config";
@@ -18,12 +19,12 @@ export function Header() {
       }}
     >
       <div className="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5">
+        <Link href="/#top" className="flex items-center gap-2.5">
           <Logo size={38} />
           <span className="marc text-palm" style={{ fontSize: "1.25rem", letterSpacing: ".16em" }}>
             MOSTLYFUR
           </span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-7">
           {nav.map(([l, h]) => (
             <a key={l} href={h} className="nav-link">

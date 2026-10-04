@@ -4,13 +4,14 @@ export const siteConfig = {
   title: "Mostlyfur — Pet Grooming & Cat Boarding Spa in Siolim, Goa",
   description:
     "Luxurious dog & cat grooming, a serene cats-only boarding retreat, and a curated pet boutique in Siolim, North Goa. Certified stress-free groomers, all-natural products. Book on WhatsApp.",
-  // TODO: replace with the live production domain once it's registered/deployed.
   url: "https://www.mostlyfur.com",
   phoneDisplay: "+91 91756 90509",
   phoneE164: "+919175690509",
   whatsapp: "919175690509",
   email: "pets@mostlyfur.com",
   streetAddress: "1st floor, Newton's Villa, Kudal, Porta Vaddo, above House of Barbecue",
+  // Short wayfinding line for the page: the salon is upstairs and easy to miss from the road.
+  landmark: "1st floor, Newton's Villa — directly above House of Barbecue",
   locality: "Siolim",
   region: "Goa",
   country: "IN",
@@ -44,14 +45,19 @@ export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
 )}&ll=${siteConfig.latitude},${siteConfig.longitude}&z=16&output=embed`;
 
 export const nav: Array<[string, string]> = [
-  ["Services", "#services"],
-  ["Grooming", "#grooming"],
-  ["Boarding", "#boarding"],
-  ["Boutique", "#boutique"],
-  ["Team", "#team"],
-  ["Visit", "#visit"],
+  ["Services", "/#services"],
+  ["Grooming", "/#grooming"],
+  ["Boarding", "/#boarding"],
+  ["Boutique", "/#boutique"],
+  ["Team", "/#team"],
+  ["Visit", "/#visit"],
 ];
 
 export function waLink(message: string) {
   return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+// Effective date of the privacy policy and terms (ISO, so the sitemap can parse it).
+// Bump this whenever either page changes materially.
+export const legalLastUpdated = "2026-10-04";
+export const legalLastUpdatedDisplay = "4 October 2026";

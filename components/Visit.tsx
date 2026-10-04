@@ -25,6 +25,12 @@ export function Visit() {
               {siteConfig.postalCode}
             </span>
           </p>
+          <p className="callout" style={{ fontSize: ".98rem", lineHeight: 1.55 }}>
+            <strong className="text-palm" style={{ fontWeight: 600 }}>
+              How to find us:
+            </strong>{" "}
+            {siteConfig.landmark}.
+          </p>
           <p className="flex items-center gap-3 text-palm">
             <Clock size={20} className="text-clay" />{" "}
             <span>
