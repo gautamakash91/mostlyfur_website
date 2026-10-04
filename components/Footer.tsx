@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "./ui/Logo";
 import { nav, siteConfig } from "@/lib/site-config";
 
@@ -58,12 +59,12 @@ export function Footer() {
         >
           <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
           <span className="flex gap-5">
-            <a href="#" className="nav-link" style={{ color: "inherit" }}>
+            <Link href="/privacy" className="nav-link" style={{ color: "inherit" }}>
               Privacy
-            </a>
-            <a href="#" className="nav-link" style={{ color: "inherit" }}>
+            </Link>
+            <Link href="/terms" className="nav-link" style={{ color: "inherit" }}>
               Terms
-            </a>
+            </Link>
           </span>
         </div>
       </div>

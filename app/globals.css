@@ -40,6 +40,8 @@
 @layer base {
   html {
     background: var(--paper);
+    /* Keeps /#grooming, /#boarding etc. (ad landing URLs) clear of the sticky header. */
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -257,5 +259,67 @@
   }
   .chev.open {
     transform: rotate(180deg);
+  }
+
+  /* ---------- Legal pages (privacy / terms) ---------- */
+  .legal section {
+    scroll-margin-top: 6rem;
+  }
+  .legal section + section {
+    margin-top: 2.75rem;
+    padding-top: 2.75rem;
+    border-top: 1px solid rgba(36, 31, 27, 0.1);
+  }
+  .legal h2 {
+    font-family: var(--font-display), Georgia, serif;
+    color: var(--palm);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    line-height: 1.2;
+  }
+  .legal h3 {
+    font-family: var(--font-display), Georgia, serif;
+    color: var(--palm);
+    font-size: 1.2rem;
+    margin-top: 1.6rem;
+  }
+  .legal p,
+  .legal ul {
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-top: 1rem;
+  }
+  .legal ul {
+    list-style: disc;
+    padding-left: 1.3rem;
+  }
+  .legal li + li {
+    margin-top: 0.5rem;
+  }
+  .legal li::marker {
+    color: var(--gold);
+  }
+  .legal strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .legal a {
+    color: var(--palm);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-underline-offset: 3px;
+  }
+  /* Beat `.legal p`'s muted colour for callouts inside legal copy. */
+  .legal .callout {
+    color: var(--ink);
+  }
+
+  /* ---------- Gold-edged callout (legal notices, "how to find us") ---------- */
+  .callout {
+    background: var(--ivory);
+    border: 1px solid rgba(194, 161, 77, 0.45);
+    border-left: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    color: var(--ink);
   }
 }

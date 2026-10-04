@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Crest } from "./ui/Crest";
 import { Eyebrow } from "./ui/Eyebrow";
+import { FindUs } from "./ui/FindUs";
 import { waLink } from "@/lib/site-config";
 import signaturePhoto from "@/public/photos/signature-grooming.jpg";
 
@@ -61,6 +62,7 @@ export function Grooming() {
           >
             Schedule a pampering session <ArrowRight size={17} />
           </a>
+          <FindUs />
         </div>
       </div>
     </section>

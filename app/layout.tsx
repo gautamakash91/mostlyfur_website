@@ -98,6 +98,12 @@ const localBusinessJsonLd = {
     postalCode: siteConfig.postalCode,
     addressCountry: siteConfig.country,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: siteConfig.latitude,
+    longitude: siteConfig.longitude,
+  },
+  hasMap: siteConfig.mapsUrl,
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: siteConfig.googleRating,
